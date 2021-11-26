@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
+
 class addfriend extends FormRequest
 {
     /**
@@ -25,7 +26,7 @@ class addfriend extends FormRequest
     public function rules()
     {
         return [
-            "friend_id"=>"required"
+            "friend_id" => "required"
         ];
     }
 
@@ -37,6 +38,4 @@ class addfriend extends FormRequest
             'data'      => $validator->errors()
         ]));
     }
-
-
 }

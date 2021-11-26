@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 
 class UserAuthentication
-{
+{/*  */
     /**
      * Handle an incoming request.
      *
@@ -18,15 +18,14 @@ class UserAuthentication
     public function handle(Request $request, Closure $next)
     {
 
-        $token=$request->bearerToken();
-        $result = User::where('remember_token',$token)->first();
+        $token = $request->bearerToken();
+        $result = User::where('remember_token', $token)->first();
         //$result = $db->findOne(["remember_token"=>$token]);
 
-        if(isset($result)){
+        if (isset($result)) {
             return $next($request);
-        }else{
-            return response()->error(['data'=>"token expire!"],400);
+        } else {
+            return response()->error(['data' => "token expire!"], 400);
         }
-
     }
 }

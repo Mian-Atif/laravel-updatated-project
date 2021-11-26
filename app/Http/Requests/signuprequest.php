@@ -26,11 +26,11 @@ class signuprequest extends FormRequest
     public function rules()
     {
         return [
-            "name"=>"required",
-            "email"=>"required|email",
-            "password"=>"required",
-            "phone_no"=>"required",
-            "favorite_animal"=>"required"
+            "name" => "required",
+            "email" => "required|email",
+            "password" => "required",
+            "phone_no" => "required",
+            "favorite_animal" => "required"
         ];
     }
 

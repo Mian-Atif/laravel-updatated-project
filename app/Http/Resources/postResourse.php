@@ -14,13 +14,13 @@ class postResourse extends JsonResource
      */
     public function toArray($request)
     {
-        return[
-            "id"=>$this->id,
-            "body"=>$this->body,
-            "visibility"=>$this->visibility,
-            "created_at"=>(string)$this->created_at,
-            "created_at"=>(string)$this->created_at,
-            "post"=>$this->comments()->get()
+        return [
+            "id" => $this->id,
+            "body" => $this->body,
+            "visibility" => $this->visibility,
+            "created_at" => (string)$this->created_at,
+            "created_at" => (string)$this->created_at,
+            "post" => $this->comments()->get()
         ];
     }
 }

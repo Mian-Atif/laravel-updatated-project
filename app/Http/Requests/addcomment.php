@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
+
 class addcomment extends FormRequest
 {
     /**
@@ -25,9 +26,9 @@ class addcomment extends FormRequest
     public function rules()
     {
         return [
-           "comment_attachment"=>"required",
-            "comment_body"=>"required",
-            "post_id"=>"required",
+            "comment_attachment" => "required",
+            "comment_body" => "required",
+            "post_id" => "required",
 
         ];
     }
@@ -40,6 +41,4 @@ class addcomment extends FormRequest
             'data'      => $validator->errors()
         ]));
     }
-
-
 }

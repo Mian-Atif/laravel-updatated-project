@@ -26,8 +26,8 @@ class signinrequest extends FormRequest
     public function rules()
     {
         return [
-            "email"=>"required|email",
-            "password"=>"required",
+            "email" => "required|email",
+            "password" => "required",
         ];
     }
 
@@ -39,6 +39,4 @@ class signinrequest extends FormRequest
             'data'      => $validator->errors()
         ]));
     }
-
-
 }

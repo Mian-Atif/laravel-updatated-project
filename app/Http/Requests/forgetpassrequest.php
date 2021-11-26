@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
+
 class forgetpassrequest extends FormRequest
 {
     /**
@@ -25,9 +26,9 @@ class forgetpassrequest extends FormRequest
     public function rules()
     {
         return [
-            "email"=>"required|email",
-            "favorite_animal"=>"required",
-            "new_password"=>"required"
+            "email" => "required|email",
+            "favorite_animal" => "required",
+            "new_password" => "required"
         ];
     }
 
@@ -39,6 +40,4 @@ class forgetpassrequest extends FormRequest
             'data'      => $validator->errors()
         ]));
     }
-
-
 }

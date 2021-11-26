@@ -15,13 +15,13 @@ class UserResourse extends JsonResource
     public function toArray($request)
     {
         return [
-            "id"=>$this->id,
-            "name"=>$this->name,
-            "email"=>$this->email,
-            "created_at"=>(string)$this->created_at,
-            "updated_at"=>(string)$this->updated_at,
-            "favorite_animal"=>$this->favorite_animal,
-            "post"=>postResourse::collection($this->posts()->get())
+            "id" => $this->id,
+            "name" => $this->name,
+            "email" => $this->email,
+            "created_at" => (string)$this->created_at,
+            "updated_at" => (string)$this->updated_at,
+            "favorite_animal" => $this->favorite_animal,
+            "post" => postResourse::collection($this->posts()->get())
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
+
 class searchuserrequest extends FormRequest
 {
     /**
@@ -25,7 +26,7 @@ class searchuserrequest extends FormRequest
     public function rules()
     {
         return [
-            "email"=>"required|email"
+            "email" => "required|email"
         ];
     }
 
@@ -37,6 +38,4 @@ class searchuserrequest extends FormRequest
             'data'      => $validator->errors()
         ]));
     }
-
-
 }

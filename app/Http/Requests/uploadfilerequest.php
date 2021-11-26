@@ -26,7 +26,7 @@ class uploadfilerequest extends FormRequest
     public function rules()
     {
         return [
-            "file"=>"required"
+            "file" => "required"
 
         ];
     }
@@ -39,6 +39,4 @@ class uploadfilerequest extends FormRequest
             'data'      => $validator->errors()
         ]));
     }
-
-
 }

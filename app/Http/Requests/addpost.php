@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
+
 class addpost extends FormRequest
 {
     /**
@@ -26,8 +27,8 @@ class addpost extends FormRequest
     {
         return [
             //"attachment"=>"required",
-            "body"=>"required",
-            "visibility"=>"required",
+            "body" => "required",
+            "visibility" => "required",
 
         ];
     }
@@ -40,6 +41,4 @@ class addpost extends FormRequest
             'data'      => $validator->errors()
         ]));
     }
-
-
 }
