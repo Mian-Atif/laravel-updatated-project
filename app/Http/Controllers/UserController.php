@@ -12,6 +12,7 @@ use App\Http\Requests\signuprequest;
 use App\Http\Requests\signinrequest;
 use App\Http\Resources\UserResourse;
 use App\Service\JwtAuth;
+use App\Jobs\SendEmailJob;
 
 
 class UserController extends Controller
@@ -39,7 +40,7 @@ class UserController extends Controller
             $details['email']=$auth['email'];
 
             //send verification mail
-            Mail::to($auth['email'])->send(new \App\Mail\EmailVerification($details));
+            dispatch(new \App\Jobs\SendEmailJob($details));
 
             return response()->success(["result"=>"user is successfully signup"],200);
         }
